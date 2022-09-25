@@ -1,0 +1,33 @@
+<div>
+    <!-- <input type="button" value="Load Employee Data" (click)="loadEmployeeDetails()"/> -->
+    <form [formGroup]="empRef" (ngSubmit)="storeEmployee()"  class="container-fluid">
+        <input type="number" placeholder="Enter Employee Id" formControlName="id" class="form-control"/>
+        <input type="text" placeholder="Enter First name" formControlName="first_name" class="form-control"/>
+        <input type="text" placeholder="Enter last_name" formControlName="last_name" class="form-control"/>
+        <input type="email" placeholder="Enter Email Id" formControlName="email" class="form-control"/>
+        
+        <button class="btn btn-secondary">Add Employee</button>
+    </form>
+    
+    <!-- <br> -->
+    <div class="tables">
+        <table class="table caption-top">
+            <caption  >List Of Employees</caption>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email Id</th>
+            </tr>
+            <tr *ngFor="let e of employees">
+                <td>{{e.id}}</td>
+                <td>{{e.first_name}}</td>
+                <td>{{e.last_name}}</td>
+                <td>{{e.email}}</td>
+                <td id="data"><button (click)="viewDetails(e)" class="btn btn-outline-secondary">View Details</button></td>
+            </tr>
+    
+        </table>
+    </div>
+    
+</div>

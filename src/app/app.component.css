@@ -1,0 +1,5 @@
+li:hover{
+    font-weight: bolder;
+    font-size: larger;
+    transition: .3s;
+}
